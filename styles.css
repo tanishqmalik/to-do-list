@@ -69,8 +69,15 @@
 }
 
 #li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-left:30px;
     color: rgb(0, 0, 0);
+}
+
+#li input[type="checkbox"]{
+
 }
 
 #tasklist{
@@ -80,7 +87,24 @@
     flex-direction: column;
     gap:10px;
 }
-#task1{
-    
+
+#text{
+    opacity: 50%;
+}
+
+#deletetask{
+    /* position: absolute; */
+    left:270px;
+    width:70px;
+    height:30px;
+    border-radius:5px;
+    border: 0;
+    outline: 0;
+    background-color: white;
+    margin-right: 30px;
+}
+
+#deletetask:hover{
+    background-color: rgb(171, 173, 174);
 }
 
