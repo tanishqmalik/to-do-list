@@ -2,6 +2,8 @@
 
 // const { Button } = require("bootstrap");
 
+
+ // line-through happeing only for pre-written list
 function markCompleted(taskId){
     var checkbox = document.getElementById(taskId);
     var listItem = checkbox.parentElement;
@@ -66,26 +68,78 @@ function addTask(event){
         liD.appendChild(liButton)
 
 
-
+        // delete button for all lists 
         liButton.addEventListener('click',function(){
             liD.remove()
         })
 
 
+        // Get all checkboxes
+        var checkboxes =document.querySelectorAll('.task1')
 
-        divInput.addEventListener('click',markCompleted)
-        function markCompleted(taskId){
-            var checkbox = document.getElementById(taskId);   // i want to add id not class here , if i will add id for divinput , then it will work for me, so it will take id not class becz it is getelementbyid
-            var listItem = checkbox.parentElement;
-        
-            if(checkbox.checked){
-                listItem.style.textDecoration="line-through";
-            }
-            else{
-                listItem.style.textDecoration="none";
-            }
-        }
+        // Loop chla do har ek checkbox ke liye
+        checkboxes.forEach(function(checkbox){
+            checkbox.addEventListener('click', function(){
+                // var checkbox1=document.getElementById('task1');
+                var listItem1=checkbox.parentElement;
 
+                if(checkbox.checked){
+                    listItem1.style.textDecoration="line-through";
+                }
+
+                else{
+                    listItem1.style.textDecoration="none";
+                }
+            });
+        });
+
+
+        // Get all checkboxes
+// var checkboxes = document.querySelectorAll('.task1');
+
+// // Loop through each checkbox
+// checkboxes.forEach(function(checkbox) {
+//     // Add click event listener to each checkbox
+//     checkbox.addEventListener('click', function() {
+//         // Get the parent list item of the checkbox
+//         var listItem = checkbox.closest('li')
+
+//         // If the checkbox is checked, add line-through style to the list item
+//         if (checkbox.checked) {
+//             listItem.style.textDecoration = "line-through"
+//         } else {
+//             // If the checkbox is not checked, remove line-through style from the list item
+//             listItem.style.textDecoration = "none"
+//         }
+//     })
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //line-through happeing only for first list which i add 
+
+        // divInput.addEventListener('click', function(){
+        //     var checkbox1=document.getElementById("task1");
+        //     var listItem1=checkbox1.parentElement;
+
+        //     if(checkbox1.checked){
+        //         listItem1.style.textDecoration="line-through";
+        //     }
+        //     else{
+        //         listItem1.style.textDecoration="none";
+        //     }
+        // })
         
 
 
@@ -95,6 +149,9 @@ function addTask(event){
 }
 
 
+
+
+// delete button for pre-written text
 document.getElementById('deletetask').addEventListener('click', deletetaskwhenclick);
 function deletetaskwhenclick(event){
     event.preventDefault();
