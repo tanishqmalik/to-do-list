@@ -68,7 +68,8 @@
     }
 }
 
-#li{
+.li{
+    padding-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -80,7 +81,7 @@
 
 }
 
-#tasklist{
+.tasklist{
     display: flex;
     padding-top: 20px;
     list-style: none;
@@ -92,9 +93,9 @@
     opacity: 50%;
 }
 
-#deletetask{
+.deletetask{
     /* position: absolute; */
-    left:270px;
+    /* left:270px; */
     width:70px;
     height:30px;
     border-radius:5px;
@@ -104,7 +105,12 @@
     margin-right: 30px;
 }
 
-#deletetask:hover{
+.deletetask:hover{
     background-color: rgb(171, 173, 174);
 }
 
+.li1stpart{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
